@@ -1,0 +1,11 @@
+﻿mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_num_fields@4，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_error@4，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_init@4，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_real_connect@32，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_select_db@8，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_real_query@12，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_store_result@4，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_free_result@4，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_fetch_row@4，该符号在函数 _main 中被引用
+mysql_lib连接.obj : error LNK2019: 无法解析的外部符号 _mysql_close@4，该符号在函数 _main 中被引用
+E:\c++\mysql_lib连接\Debug\mysql_lib连接.exe : fatal error LNK1120: 10 个无法解析的外部命令
