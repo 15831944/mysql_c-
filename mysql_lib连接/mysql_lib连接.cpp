@@ -6,87 +6,36 @@
 #pragma comment(lib,"libmysql.lib")
 
 
+#include <iostream>
+#include "mysql_handle.h"
+using namespace std;
+
+
+
 int main()
 {
-	MYSQL * con; //= mysql_init((MYSQL*) 0); 
-	MYSQL_RES *res;
-	MYSQL_ROW row;
-	char tmp[400];
-	//database configuartion
-	char dbuser[30] = "root";
-	char dbpasswd[30] = "123456"; // it must be    changed
-	char dbip[30] = "localhost";
-	char dbname[50] = "zt";
-	char tablename[50] = "students";
-	char *query = NULL;
+	mysql_base mb;
+	mb.dbuser = "root";
+	mb.dbpasswd = "123456";
+	mb.dbip = "127.0.0.1";
+	mb.dbname = "zt";
+	mb.connect();
+	vector<string> fields;
+	vector<vector<string>> rows;
+	mb.Query("select * from students", fields, rows);
 
-	int x;
-	int y;
-	int rt;//return value  
-	unsigned int t;
+	cout << rows.size() << endl;
 
-	int count = 0;
-
-	con = mysql_init((MYSQL*)0);
-
-	if (con != NULL && mysql_real_connect(con, dbip, dbuser, dbpasswd, dbname, 3306, NULL, 0)) {
-		if (!mysql_select_db(con, dbname)) {
-			printf("Select successfully the database!\n");
-			con->reconnect = 1;
-			query = "set names \'GBK\'";
-			rt = mysql_real_query(con, query, strlen(query));
-			if (rt) {
-				printf("Error making query: %s !!!\n", mysql_error(con));
-			}
-			else {
-				printf("query %s succeed!\n", query);
-			}
+	for (int i = 0; i < fields.size(); i++) {
+		cout << fields[i].c_str() << endl;
+	}
+	for (int i = 0; i < rows.size(); i++) {
+		for (int j = 0; j < rows[i].size(); j++) {
+			cout << rows[i][j].c_str() << endl;
 		}
 	}
-	else {
-		MessageBoxA(NULL, "Unable to connect the database,check your configuration!", "", NULL);
-	}
-
-	//sprintf(tmp, "insert into %s values(%s,%d,%d)", tablename, "null", x, y); //注意如何向具有自增字段的数据库中插入记录
-	snprintf(tmp,sizeof(tmp), "insert into bl values(null,'x','x','x','x')");
-
-
-	rt = mysql_real_query(con, tmp, strlen(tmp));
-	if (rt)
-	{
-		printf("Error making query: %s !!!\n", mysql_error(con));
-	}
-	else
-	{
-		printf("%s executed!!!\n", tmp);
-	}
-
-	snprintf(tmp,sizeof(tmp) ,"select * from %s", tablename);
-	rt = mysql_real_query(con, tmp, strlen(tmp));
-	if (rt)
-	{
-		printf("Error making query: %s !!!\n", mysql_error(con));
-	}
-	else
-	{
-		printf("%s executed!!!\n", tmp);
-	}
-	res = mysql_store_result(con);//将结果保存在res结构体中
-
-	while (row = mysql_fetch_row(res)) {
-		for (t = 0; t<mysql_num_fields(res); t++) {
-			printf("%s  ", row[t]);
-		}
-		printf(".............\n");
-		count++;
-	}
-
-	printf("number of rows %d\n", count);
-	printf("mysql_free_result...\n");
-	mysql_free_result(res);
-	mysql_close(con);
+	mb.close();
 	system("pause");
-	return 0;
 }
 
 

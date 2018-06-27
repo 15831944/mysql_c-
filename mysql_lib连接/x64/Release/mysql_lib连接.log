@@ -1,13 +1,15 @@
-﻿  mysql_lib连接.cpp
-mysql_lib连接.cpp(37): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
-mysql_lib连接.cpp(54): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
-mysql_lib连接.cpp(65): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
-mysql_lib连接.cpp(24): warning C4101: “y”: 未引用的局部变量
-mysql_lib连接.cpp(23): warning C4101: “x”: 未引用的局部变量
+﻿  mysql_handle.cpp
+mysql_handle.cpp(12): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+mysql_handle.cpp(18): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“std::string”
+mysql_handle.cpp(43): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+mysql_handle.cpp(57): warning C4018: “<”: 有符号/无符号不匹配
+mysql_handle.cpp(64): warning C4018: “<”: 有符号/无符号不匹配
+  mysql_lib连接.cpp
   正在生成代码
-  1 of 7 functions (14.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+e:\c++\mysql_lib连接\mysql_lib连接\mysql_handle.cpp(71): warning C4715: “mysql_base::Query”: 不是所有的控件路径都返回值
+  87 of 279 functions (31.2%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    18 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   mysql_lib连接.vcxproj -> E:\c++\mysql_lib连接\x64\Release\mysql_lib连接.exe
   mysql_lib连接.vcxproj -> E:\c++\mysql_lib连接\x64\Release\mysql_lib连接.pdb (Full PDB)

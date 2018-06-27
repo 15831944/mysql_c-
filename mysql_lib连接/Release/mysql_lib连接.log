@@ -1,5 +1,4 @@
 ﻿  mysql_lib连接.cpp
-mysql_lib连接.cpp(6): warning C4081: 应输入“标识符”；找到“字符串”
 mysql_lib连接.cpp(24): warning C4101: “y”: 未引用的局部变量
 mysql_lib连接.cpp(23): warning C4101: “x”: 未引用的局部变量
 mysql_lib连接.obj : error LNK2001: 无法解析的外部符号 _mysql_real_query@12
